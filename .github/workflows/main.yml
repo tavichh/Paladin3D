@@ -1,27 +1,36 @@
 name: Build and Deploy Docs
 
-# Trigger the workflow on push to the main branch
+# Trigger workflow on push to main or when manually triggered
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout the repository
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # 1. Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # Run Doxygen
-    - name: Doxygen Action
-      uses: mattnotmitt/doxygen-action@1.12.0
+      # 2. Install Doxygen (if not included in the action)
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
 
-    # Deploy to GitHub Pages
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v4.0.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/html  # Adjust this to your Doxygen output directory
+      # 3. Run Doxygen to generate docs
+      - name: Generate Doxygen docs
+        uses: mattnotmitt/doxygen-action@1.12.0
+
+      # 4. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4.0.0
+        if: success()   # Only run if previous steps succeeded
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html  # Adjust if your Doxygen output is different
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
