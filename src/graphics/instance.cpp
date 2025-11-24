@@ -2,13 +2,10 @@ module;
 #include <cstdlib>
 #include <iostream>
 #include <vulkan/vulkan.hpp>
-export module instance;
+module graphics;
 namespace graphics {
-    export void vk_createInstance( );
-} // namespace graphics
-namespace graphics {
-    export auto appName = "Paladin3D";
-    export auto engineName = "Paladin3D";
+    auto appName = "Paladin3D";
+    auto engineName = "Paladin3D";
     void vk_createInstance( ) {
         try {
             const vk::ApplicationInfo appInfo(appName, 1, engineName, 1, VK_API_VERSION_1_3);

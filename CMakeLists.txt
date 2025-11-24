@@ -8,16 +8,14 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME}
-        src/graphics/device.ixx)
-
-# Ensure C++ linker is used (needed on some setups with modules)
+add_executable(${PROJECT_NAME})
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 target_sources(${PROJECT_NAME}
         PRIVATE
         src/main.cpp
+        src/graphics/instance.cpp
         PRIVATE FILE_SET CXX_MODULES FILES
-        src/graphics/instance.ixx
+        src/graphics/graphics.ixx
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE Vulkan::Vulkan Vulkan::Headers stdc++)

@@ -1,5 +1,5 @@
 #include <iostream>
-import instance;
+import graphics;
 int main( ) {
     graphics::vk_createInstance();
     std::cout << "Hello, World!" << std::endl;
