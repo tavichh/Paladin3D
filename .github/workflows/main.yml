@@ -1,2 +1,27 @@
-- name: Doxygen Action
-  uses: mattnotmitt/doxygen-action@1.12.0
+name: Build and Deploy Docs
+
+# Trigger the workflow on push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Run Doxygen
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@1.12.0
+
+    # Deploy to GitHub Pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v4.0.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/html  # Adjust this to your Doxygen output directory
