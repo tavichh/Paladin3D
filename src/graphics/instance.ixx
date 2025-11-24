@@ -4,8 +4,7 @@ module;
 #include <vulkan/vulkan.hpp>
 export module instance;
 namespace graphics {
-export
-    void vk_createInstance();
+export void vk_createInstance();
 }  // namespace graphics
 
 namespace graphics {
