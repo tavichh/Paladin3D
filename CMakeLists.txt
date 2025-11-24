@@ -8,14 +8,15 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME})
+add_executable(${PROJECT_NAME}
+        src/graphics/device.ixx)
 
 # Ensure C++ linker is used (needed on some setups with modules)
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 target_sources(${PROJECT_NAME}
         PRIVATE
-        main.cpp
+        src/main.cpp
         PRIVATE FILE_SET CXX_MODULES FILES
         src/graphics/instance.ixx
 )
