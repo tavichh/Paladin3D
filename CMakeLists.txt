@@ -10,7 +10,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(${PROJECT_NAME}
         src/main.cpp
-        src/graphics/instance.cpp)
+        src/graphics/instance.cpp
+        src/graphics/device.cpp
+        src/graphics/utils.hpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 target_sources(${PROJECT_NAME}

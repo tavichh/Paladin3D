@@ -4,5 +4,6 @@
     <inspection_tool class="CppInconsistentNaming" enabled="true" level="GRAMMAR_ERROR" enabled_by_default="true" editorAttributes="GRAMMAR_ERROR">
       <scope name="Project Files" level="ERROR" enabled="true" editorAttributes="ERRORS_ATTRIBUTES" />
     </inspection_tool>
+    <inspection_tool class="CppUseAuto" enabled="false" level="HINT" enabled_by_default="false" />
   </profile>
 </component>

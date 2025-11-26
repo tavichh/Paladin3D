@@ -1,4 +1,5 @@
 export module graphics;
-namespace graphics {
-    export void vk_createInstance( );
+export namespace graphics {
+    void vk_createInstance( );
+    void vk_enumerateDevices( );
 }
