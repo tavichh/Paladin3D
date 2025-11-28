@@ -109,14 +109,14 @@ Functions</h2></td></tr>
 <tr class="memitem:abad731a8821a638463c6a60185aa28ff" id="r_abad731a8821a638463c6a60185aa28ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abad731a8821a638463c6a60185aa28ff">vk_enumerateDevices</a> ()</td></tr>
 <tr class="separator:abad731a8821a638463c6a60185aa28ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae59a13e7350eaf92ad51aecd11c1ef51" id="r_ae59a13e7350eaf92ad51aecd11c1ef51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae59a13e7350eaf92ad51aecd11c1ef51">vk_createInstance</a> ()</td></tr>
+<tr class="memdesc:ae59a13e7350eaf92ad51aecd11c1ef51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the creation of a Vulkan instance.  <br /></td></tr>
 <tr class="separator:ae59a13e7350eaf92ad51aecd11c1ef51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ae32ed088777e7807e3c8454a425db113" id="r_ae32ed088777e7807e3c8454a425db113"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae32ed088777e7807e3c8454a425db113">appName</a> = &quot;Paladin3D&quot;</td></tr>
+<tr class="memdesc:ae32ed088777e7807e3c8454a425db113"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the application.  <br /></td></tr>
 <tr class="separator:ae32ed088777e7807e3c8454a425db113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6bd81e978e8af6e2797d8d62e6c7d78" id="r_ae6bd81e978e8af6e2797d8d62e6c7d78"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6bd81e978e8af6e2797d8d62e6c7d78">engineName</a> = &quot;Paladin3D&quot;</td></tr>
-<tr class="separator:ae6bd81e978e8af6e2797d8d62e6c7d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae59a13e7350eaf92ad51aecd11c1ef51" name="ae59a13e7350eaf92ad51aecd11c1ef51"></a>
@@ -134,25 +134,27 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="instance_8cpp_source.html#l00009">9</a> of file <a class="el" href="instance_8cpp_source.html">instance.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>                              {</div>
-<div class="line"><span class="lineno">   10</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">   11</span>            <span class="keyword">const</span> vk::ApplicationInfo appInfo(appName, 1, engineName, 1, VK_API_VERSION_1_3);</div>
-<div class="line"><span class="lineno">   12</span>            <span class="keyword">const</span> vk::InstanceCreateInfo instance_create_info({}, &amp;appInfo);</div>
-<div class="line"><span class="lineno">   13</span>            <span class="keyword">const</span> vk::Instance instance = vk::createInstance(instance_create_info);</div>
-<div class="line"><span class="lineno">   14</span>            instance.destroy();</div>
-<div class="line"><span class="lineno">   15</span>        } <span class="keywordflow">catch</span> (vk::SystemError &amp;err) {</div>
-<div class="line"><span class="lineno">   16</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;vk::SystemError:&quot;</span> &lt;&lt; err.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   17</span>            exit(-1);</div>
-<div class="line"><span class="lineno">   18</span>        } <span class="keywordflow">catch</span> (std::exception &amp;err) {</div>
-<div class="line"><span class="lineno">   19</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;std::exception:&quot;</span> &lt;&lt; err.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   20</span>            exit(-1);</div>
-<div class="line"><span class="lineno">   21</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><span class="lineno">   22</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;unknown exception\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   23</span>        }</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
+<p>Handles the creation of a Vulkan instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="instance_8cpp_source.html#l00016">16</a> of file <a class="el" href="instance_8cpp_source.html">instance.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>                              {</div>
+<div class="line"><span class="lineno">   17</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">   18</span>            <span class="keyword">const</span> vk::ApplicationInfo appInfo(appName, 1, engineName, 1, VK_API_VERSION_1_3);</div>
+<div class="line"><span class="lineno">   19</span>            <span class="keyword">const</span> vk::InstanceCreateInfo instance_create_info({}, &amp;appInfo);</div>
+<div class="line"><span class="lineno">   20</span>            <span class="keyword">const</span> vk::Instance instance = vk::createInstance(instance_create_info);</div>
+<div class="line"><span class="lineno">   21</span>            instance.destroy();</div>
+<div class="line"><span class="lineno">   22</span>        } <span class="keywordflow">catch</span> (vk::SystemError &amp;err) {</div>
+<div class="line"><span class="lineno">   23</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;vk::SystemError:&quot;</span> &lt;&lt; err.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   24</span>            exit(-1);</div>
+<div class="line"><span class="lineno">   25</span>        } <span class="keywordflow">catch</span> (std::exception &amp;err) {</div>
+<div class="line"><span class="lineno">   26</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;std::exception:&quot;</span> &lt;&lt; err.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   27</span>            exit(-1);</div>
+<div class="line"><span class="lineno">   28</span>        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">   29</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;unknown exception\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   30</span>        }</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="instance_8cpp_source.html#l00007">appName</a>, and <a class="el" href="instance_8cpp_source.html#l00008">engineName</a>.</p>
+<p class="reference">References <a class="el" href="instance_8cpp_source.html#l00011">appName</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00003">main()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -214,27 +216,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="instance_8cpp_source.html#l00007">7</a> of file <a class="el" href="instance_8cpp_source.html">instance.cpp</a>.</p>
+<p>The name of the application. </p>
 
-<p class="reference">Referenced by <a class="el" href="instance_8cpp_source.html#l00009">vk_createInstance()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="instance_8cpp_source.html#l00011">11</a> of file <a class="el" href="instance_8cpp_source.html">instance.cpp</a>.</p>
 
-</div>
-</div>
-<a id="ae6bd81e978e8af6e2797d8d62e6c7d78" name="ae6bd81e978e8af6e2797d8d62e6c7d78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6bd81e978e8af6e2797d8d62e6c7d78">&#9670;&#160;</a></span>engineName</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* graphics::engineName = &quot;Paladin3D&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="instance_8cpp_source.html#l00008">8</a> of file <a class="el" href="instance_8cpp_source.html">instance.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="instance_8cpp_source.html#l00009">vk_createInstance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="instance_8cpp_source.html#l00016">vk_createInstance()</a>.</p>
 
 </div>
 </div>
@@ -244,7 +230,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacegraphics.html">graphics</a></li>
-    <li class="footer">Generated on Wed Nov 26 2025 09:14:56 for Paladin3D by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Fri Nov 28 2025 17:32:20 for Paladin3D by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </body>

@@ -1,6 +1,6 @@
 <map id="main" name="main">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,55,56"/>
-<area shape="rect" id="Node000002" href="$namespacegraphics.html#ae59a13e7350eaf92ad51aecd11c1ef51" title=" " alt="" coords="114,5,297,31"/>
+<area shape="rect" id="Node000002" href="$namespacegraphics.html#ae59a13e7350eaf92ad51aecd11c1ef51" title="Handles the creation of a Vulkan instance." alt="" coords="114,5,297,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,37,98,31,99,36,55,43"/>
 <area shape="rect" id="Node000003" href="$namespacegraphics.html#abad731a8821a638463c6a60185aa28ff" title=" " alt="" coords="103,55,308,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,44,93,49,92,55,55,49"/>

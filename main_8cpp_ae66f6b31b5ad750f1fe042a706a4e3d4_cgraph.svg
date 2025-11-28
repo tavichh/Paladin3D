@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="namespacegraphics.html#ae59a13e7350eaf92ad51aecd11c1ef51" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="namespacegraphics.html#ae59a13e7350eaf92ad51aecd11c1ef51" target="_top" xlink:title="Handles the creation of a Vulkan instance.">
 <polygon fill="white" stroke="#666666" points="218.75,-56.25 81.25,-56.25 81.25,-37 218.75,-37 218.75,-56.25"/>
 <text text-anchor="middle" x="150" y="-42.75" font-family="Helvetica,sans-Serif" font-size="10.00">graphics::vk_createInstance</text>
 </a>
