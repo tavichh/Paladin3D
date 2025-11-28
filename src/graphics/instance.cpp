@@ -4,8 +4,15 @@ module;
 #include <vulkan/vulkan.hpp>
 module graphics;
 namespace graphics {
+
+    /**
+     *  @brief The name of the application.
+     */
     const char *appName = "Paladin3D";
-    const char *engineName = "Paladin3D";
+
+    /**
+     * @brief Handles the creation of a Vulkan instance.
+     */
     void vk_createInstance( ) {
         try {
             const vk::ApplicationInfo appInfo(appName, 1, engineName, 1, VK_API_VERSION_1_3);
